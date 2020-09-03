@@ -1,0 +1,21 @@
+{
+    "short_name": "Schoolar Bootstrapped Tool",
+    "name": "Create Schoolar Tool Sample",
+    "icons": [
+      {
+        "src": "icon.svg",
+        "sizes": "64x64 32x32 24x24 16x16",
+        "type": "image/x-icon"
+      },
+      {
+        "src": "icon.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#0C9AEA",
+    "background_color": "#ffffff"
+  }
+  
