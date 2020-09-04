@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { SchoolarApp } from 'doughnut-ui'
 import App from './src/App';
+import { SchoolarApp } from 'doughnut-ui'
 
 ReactDOM.render(
   <React.StrictMode>

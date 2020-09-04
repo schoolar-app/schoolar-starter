@@ -23,7 +23,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "doughnut-ui": "https://github.com/developersunesis/doughnut-ui.git",
+    "doughnut-ui": "github:developersunesis/doughnut-ui",
     "interpolate-html-plugin": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
