@@ -1,6 +1,6 @@
 {
-    "short_name": "Schoolar Bootstrapped Tool",
-    "name": "Create Schoolar Tool Sample",
+    "name": "Schoolar Bootstrapped Tool",
+    "description" : "Create Schoolar Tool Sample",
     "icons": [
       {
         "src": "icon.svg",
