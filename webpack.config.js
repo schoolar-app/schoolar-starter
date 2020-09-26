@@ -1,6 +1,7 @@
 const path = require('path');
 const WebpackQRCodePlugin = require('webpack-dev-server-qr-code');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
     entry: './index.js',
@@ -22,11 +23,19 @@ module.exports = {
         port: 9000,
         host: '0.0.0.0'
     },
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin({
+            cache: true,
+            sourceMap: true,
+        })],
+    },
     plugins: [
         new WebpackQRCodePlugin(),
         new HtmlWebpackPlugin({
-            title: 'My App',
-            filename: 'assets/admin.html'
+            title: 'Schoolar Tool',
+            filename: 'index.html',
+            template: 'public/index.html'
         })
     ]
 };

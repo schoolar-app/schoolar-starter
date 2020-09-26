@@ -1,5 +1,5 @@
 import React from 'react'
-import { Fab, ToolBar, Toast } from './lib/interfaces'
+import { Fab, ToolBar, Toast } from 'schoolar-framework'
 
 function testInterface() {
     ToolBar.setTitle("Hello Schoolar")
