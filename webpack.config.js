@@ -1,6 +1,6 @@
-const path = require('path');
-const WebpackQRCodePlugin = require('webpack-dev-server-qr-code');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
+const webpack = require('webpack')
+const WebpackQRCodePlugin = require('webpack-dev-server-qr-code')
 const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
@@ -10,18 +10,40 @@ module.exports = {
         path: path.join(__dirname, 'build')
     },
     module: {
-        rules: [{
-         loader: 'babel-loader',
-         test: /\.js$/,
-         exclude: /node_modules/
-        }]
+        rules: [
+            {
+                loader: 'babel-loader',
+                test: /\.js$/,
+                exclude: /node_modules/
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+                exclude: /node_modules/
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+                exclude: /node_modules/
+            }
+        ]
     },
-    mode: 'development',
-    devtool:'inline-source-map',
+    devtool: 'inline-source-map',
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
     devServer: {
         contentBase: path.join(__dirname, 'public'),
+        historyApiFallback: true,
+        hot: true,
+        inline: true,
+        progress: true,
         port: 9000,
-        host: '0.0.0.0'
+        host: '0.0.0.0',
     },
     optimization: {
         minimize: true,
@@ -31,11 +53,7 @@ module.exports = {
         })],
     },
     plugins: [
-        new WebpackQRCodePlugin(),
-        new HtmlWebpackPlugin({
-            title: 'Schoolar Tool',
-            filename: 'index.html',
-            template: 'public/index.html'
-        })
+        new webpack.HotModuleReplacementPlugin(),
+        new WebpackQRCodePlugin()
     ]
 };

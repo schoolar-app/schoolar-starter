@@ -1,9 +1,9 @@
 import React from 'react'
 import { Fab, ToolBar, Toast } from 'schoolar-framework'
 
-function testInterface() {
+function initView() {
     ToolBar.setTitle("Hello Schoolar")
-    Fab.hide()
+    Fab.hide() 
 }
 
 function showMessage(){
@@ -12,13 +12,12 @@ function showMessage(){
 
 export default function App() {
 
-    testInterface();
+    initView();
 
     return (
-        <div>
-            Welcome to Schoolar
-            <br/>
-            <button onClick={() => showMessage()}>Hello</button>
-        </div>
+        <>
+            <h3>Welcome to Schoolar Tool Template</h3>
+            <button onClick={() => showMessage()}>Click Me</button>
+        </>
     )
 }
